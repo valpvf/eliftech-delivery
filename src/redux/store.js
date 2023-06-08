@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -10,28 +10,24 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-// import userReducer from "./userSlice";
+import userReducer from "./user/userSlice";
+import productReducer from "./product/productSlice";
+import globalReducer from "./global/globalSlice";;
 
 const persistConfig = {
   key: "user",
   storage,
-  blacklist: [],
+  blacklist: ["error", "isLoading"],
 };
 
-const ini = { a: null, b: null };
-const userReducer = createSlice({
-  name: "user",
-  ini,
-  reducers: {
-    changePart: (state, { payload }) => {
-      state.part += payload;
-    },
-  },
-}).reducer;
 const persistedReducer = persistReducer(persistConfig, userReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    user: persistedReducer,
+    shop: productReducer,
+    global: globalReducer,
+  },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({
       serializableCheck: {

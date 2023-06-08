@@ -1,14 +1,20 @@
-import { NavLink } from "react-router-dom"
+import { HeaderStyled, ListSyled, NavLinkStyled } from "./HeaderStyled";
 
 const Header = () => {
-    return <nav>
-        <ul>
+  return (
+    <HeaderStyled>
+        <nav>
+          <ListSyled>
             <li>
-                <NavLink>Shop</NavLink>
+              <NavLinkStyled to={'/'}>Shop</NavLinkStyled>
             </li>
             <li>
-                <NavLink>ShoppingCart</NavLink>
+              <NavLinkStyled to={'/cart'}>ShoppingCart</NavLinkStyled>
             </li>
-        </ul>
-    </nav>
-}
+          </ListSyled>
+        </nav>
+    </HeaderStyled>
+  );
+};
+
+export default Header;

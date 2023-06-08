@@ -1,21 +1,17 @@
-import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import { addNFT } from "./redux/actions";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import "./share/styles/App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Shop, ShoppingCart } from "./pages";
+import MainLayuot from "./components/MainLayuot/MainLayuot";
 
 const App = () => {
   return (
-    <div>
-      <Link to="/"> Shop</Link>
-      <Link to="/cart"> ShoppingCart</Link>
-      <Routes>
-        <Route path="/" element={<Shop />} />
-        <Route path="/cart" element={<ShoppingCart />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayuot />}>
+        <Route index element={<Shop />} />
+        <Route path=":cart" element={<ShoppingCart />} />
+      </Route>
+      <Route path="*" element={<Navigate to={"/"} />} />
+    </Routes>
   );
 };
 
