@@ -1,26 +1,14 @@
 // import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectorProduct } from "../redux/product/productSelector";
+import Card from "../components/Card/Card";
+import Delivery from "../components/Delivery/Delivery";
+import { WrapStyled } from "./pagesStyled";
 
 const Shop = () => {
-  const render = useSelector(selectorProduct);
-
-  // useEffect((render) => {
-  //   getProductApi();
-  // }, []);
-  console.log(render);
   return (
-    <>
-      <ul>
-        {render.map((el) => (
-          <li key={el.id}>
-            <img src={el.picture} alt={el.product} />
-            <h3>{el.product}</h3>
-            <h2>{el.price}</h2>
-          </li>
-        ))}
-      </ul>
-    </>
+    <WrapStyled>
+      <Delivery />
+      <Card />
+    </WrapStyled>
   );
 };
 

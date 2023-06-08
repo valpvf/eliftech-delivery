@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter>
+        <BrowserRouter basename="/eliftech-delivery">
           <App />
         </BrowserRouter>
       </PersistGate>

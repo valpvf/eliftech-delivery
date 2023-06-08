@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 export const HeaderStyled = styled.header`
   position: relative;
   width: 100vw;
-  height: 100px;
   padding: 15px;
 `;
 
@@ -13,15 +12,18 @@ export const ListSyled = styled.ul`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-  padding: 15px 40px;
+  padding: 10px 40px;
+  font-size: 20px;
   color: #000;
 
-  &:active {
-    font-size: 18px;
+  &.active {
+    position: relative;
+    text-decoration: underline;
     font-weight: 700;
     color: red;
   }
-  &:first-of-type {
-    border-right-width: 4px solid #000;
+  &[datatype="one"] {
+    border-right: 2px solid #651919;
+    
   }
 `;

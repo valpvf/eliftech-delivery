@@ -6,7 +6,7 @@ const Header = () => {
         <nav>
           <ListSyled>
             <li>
-              <NavLinkStyled to={'/'}>Shop</NavLinkStyled>
+              <NavLinkStyled to={'/'} datatype="one">Shop</NavLinkStyled>
             </li>
             <li>
               <NavLinkStyled to={'/cart'}>ShoppingCart</NavLinkStyled>
