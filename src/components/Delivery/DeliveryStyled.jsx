@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { useSelector } from "react-redux";
+import { selectorShop } from "../../redux/product/productSelector";
 
 export const ListStyled = styled.ul`
   display: flex;
@@ -24,4 +26,7 @@ export const BtnStyled = styled.button`
   font-weight: 600;
   border: 1px solid #cccccc;
   border-radius: 10px;
+
+  background-color: ${(props) =>
+    props.name === useSelector(selectorShop) ? "#8bbeff" : "#dddddd"};
 `;

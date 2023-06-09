@@ -42,8 +42,7 @@ export const ListStyled = styled.ul`
 
 export const ItemStyled = styled.li`
   width: 30vw;
-  height: 35vh;
-  padding: 15px;
+  padding: 1.5vh 1vw;
   border: 1px solid #cccccc;
   border-radius: 15px;
 `;
@@ -51,14 +50,31 @@ export const ItemStyled = styled.li`
 export const ImgStyled = styled.img`
   display: block;
   width: 100%;
-  height: 90%;
-    object-fit: cover;
+  aspect-ratio: 2/1;
+  object-fit: cover;
   border-radius: 10px;
 `;
 
 export const SpanStyled = styled.span`
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 20vw;
+  height: 1vh;
+`;
+
+export const BtnToCart = styled.button`
+  width: 8vw;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+`;
+export const BoxStyled = styled.div`
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5px 15px 0;
+  margin-top: 1vh;
 `;

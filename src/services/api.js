@@ -14,3 +14,4 @@ export const getProductApi = async () => {
       return data;
     });
 };
+

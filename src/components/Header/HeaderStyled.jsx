@@ -14,16 +14,15 @@ export const ListSyled = styled.ul`
 export const NavLinkStyled = styled(NavLink)`
   padding: 10px 40px;
   font-size: 20px;
-  color: #000;
+  color: #4786d9;
 
   &.active {
     position: relative;
     text-decoration: underline;
     font-weight: 700;
-    color: red;
+    color: #2361b2;
   }
   &[datatype="one"] {
     border-right: 2px solid #651919;
-    
   }
 `;
