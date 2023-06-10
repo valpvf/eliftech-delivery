@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
-import Alert from "@mui/material/Alert";
+
+export const WrapStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const ListStyled = styled.ul`
   display: flex;
@@ -7,8 +11,8 @@ export const ListStyled = styled.ul`
   flex-direction: row;
   justify-content: space-evenly;
   gap: 30px;
-  width: 70vw;
-  height: 90vh;
+  width: 45vw;
+  height: 75vh;
   padding: 2vw;
   border: 1px solid #cccccc;
   border-radius: 30px;
@@ -42,15 +46,17 @@ export const ListStyled = styled.ul`
 `;
 
 export const ItemStyled = styled.li`
-  width: 30vw;
-  padding: 1.5vh 1vw;
+  display: flex;
+  gap: 3vw;
+  width: 40vw;
+  padding: 1.5vh 0.2vw 3vw 1vw;
   border: 1px solid #cccccc;
   border-radius: 15px;
 `;
 
 export const ImgStyled = styled.img`
   display: block;
-  width: 100%;
+  width: 24vw;
   aspect-ratio: 2/1;
   object-fit: cover;
   border-radius: 10px;
@@ -59,26 +65,30 @@ export const ImgStyled = styled.img`
 export const SpanStyled = styled.span`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  width: 20vw;
-  height: 1vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  /* width: 20vw; */
+  /* height: 1vh; */
 `;
 
-export const BtnToCart = styled.button`
-  width: 8vw;
-  padding: 10px 0;
-  font-size: 18px;
-  font-weight: 600;
-  border: 1px solid #cccccc;
-  border-radius: 10px;
-`;
 export const BoxStyled = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1vh;
+  margin-bottom: 0.2vh;
 `;
-export const AlertStyled = styled(Alert)`
-  position: absolute;
-`
+
+export const InputStyled = styled.input`
+  display: block;
+  width: 14vw;
+  border-radius: 10px;
+  padding: 10px 0;
+  &::placeholder {
+    text-align: center;
+    font-size: 18px;
+  }
+`;
+

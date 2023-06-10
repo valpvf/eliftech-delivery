@@ -8,7 +8,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isLoading: false,
   error: null,
-  shop: null,
 };
 
 const globalSlice = createSlice({

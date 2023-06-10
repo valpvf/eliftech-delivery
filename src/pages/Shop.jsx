@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import Card from "../components/Card/Card";
 import Delivery from "../components/Delivery/Delivery";
 import { WrapStyled } from "./pagesStyled";

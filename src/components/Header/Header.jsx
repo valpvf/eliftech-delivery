@@ -4,8 +4,11 @@ import {
   ListSyled,
   NavLinkStyled,
 } from "./HeaderStyled";
+import { selectorCart } from "../../redux/user/userSelector";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cart = useSelector(selectorCart);
   return (
     <HeaderStyled>
       <nav>
@@ -16,7 +19,7 @@ const Header = () => {
             </NavLinkStyled>
           </li>
           <li>
-            <NavLinkStyled to={"/cart"}>ShoppingCart <ShoppingCartIcon/></NavLinkStyled>
+            <NavLinkStyled to={"/cart"}>ShoppingCart{cart&&<ShoppingCartIcon/>}</NavLinkStyled>
           </li>
         </ListSyled>
       </nav>

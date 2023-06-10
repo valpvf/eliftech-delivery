@@ -45,15 +45,16 @@ const initialState = {
     },
   ],
   error: null,
+  cart: null
   };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    // changePart: (state, { payload }) => {
-    //   state.part += payload;
-    // },
+    addCart: (state, { payload }) => {
+      state.cart = payload;
+    },
   },
 //   extraReducers: (builder) => {
 //     builder
@@ -94,5 +95,5 @@ const userSlice = createSlice({
 //   },
 });
 
-// export const { changePart } = userSlice.actions;
+export const { addCart } = userSlice.actions;
 export default userSlice.reducer;

@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { BtnStyled, ItemStyled, ListStyled } from "./DeliveryStyled";
 import { changeShop } from "../../redux/product/productSlice";
-import { selectorShop } from "../../redux/product/productSelector";
 
 const Delivery = () => {
     const dispatch = useDispatch();
