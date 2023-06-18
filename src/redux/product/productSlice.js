@@ -356,6 +356,8 @@ const initialState = {
     },
   ],
   shop: null,
+  inCart: [0,0],
+
 };
 
 const productSlice = createSlice({
@@ -364,6 +366,9 @@ const productSlice = createSlice({
   reducers: {
     changeShop: (state, { payload }) => {
       state.shop = payload;
+    },
+    productInCart: (state, { payload }) => {
+      state.inCart = payload;
     },
   },
   extraReducers: (builder) => {
@@ -402,5 +407,5 @@ const productSlice = createSlice({
   }
 });
 
-export const { changeShop } = productSlice.actions;
+export const { changeShop, productInCart } = productSlice.actions;
 export default productSlice.reducer;

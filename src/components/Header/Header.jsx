@@ -6,9 +6,11 @@ import {
 } from "./HeaderStyled";
 import { selectorCart } from "../../redux/user/userSelector";
 import { useSelector } from "react-redux";
+import { selectorInCart } from "../../redux/product/productSelector";
 
 const Header = () => {
-  const cart = useSelector(selectorCart);
+  const inCart = useSelector(selectorInCart);
+  console.log('inCart', inCart);
   return (
     <HeaderStyled>
       <nav>
@@ -19,7 +21,7 @@ const Header = () => {
             </NavLinkStyled>
           </li>
           <li>
-            <NavLinkStyled to={"/cart"}>ShoppingCart{cart&&<ShoppingCartIcon/>}</NavLinkStyled>
+            <NavLinkStyled to={"/cart"}>ShoppingCart <ShoppingCartIcon/> {inCart[0]}</NavLinkStyled>
           </li>
         </ListSyled>
       </nav>

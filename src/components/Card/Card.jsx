@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "@mui/material/Button";
 
 import {
+  selectorInCart,
   selectorProduct,
   selectorShop,
 } from "../../redux/product/productSelector";
@@ -17,7 +18,7 @@ import {
   ListStyled,
   SpanStyled,
 } from "./CardStyled";
-import { changeShop } from "../../redux/product/productSlice";
+import { changeShop, productInCart } from "../../redux/product/productSlice";
 import { addCart } from "../../redux/user/userSlice";
 
 let message = "";
@@ -56,9 +57,12 @@ const Card = () => {
             )
           );
     }
-    // const total = cart ? cart.reduce((acc, el) => {return Number(el.amout) * Number(el.price)}) : 0;
-    console.log('cart', cart);
+    const total = cart
+      ? cart.reduce(([acc1, acc2], el) => ([acc1 += el.amount, acc2 += el.amount * el.price*100/100]),[0, 0]) 
+      : 0;
+    console.log('cart', cart, total);
     dispatch(addCart(cart));
+    dispatch(productInCart(total));
   };
 
   return (

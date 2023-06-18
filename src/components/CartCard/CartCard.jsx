@@ -71,9 +71,13 @@ const CartCard = () => {
           <BoxStyled>
             <SpanStyled>
               <h3>{el.product}</h3>
-              <h2>Price: {el.price}</h2>
+              <h2>Price: {el.price.toFixed(2)}</h2>
             </SpanStyled>
-                  <InputStyled type="number" placeholder="0" value={el.amount}></InputStyled>
+            <InputStyled
+              type="number"
+              placeholder="0"
+              value={el.amount}
+            ></InputStyled>
           </BoxStyled>
         </ItemStyled>
       ))}
